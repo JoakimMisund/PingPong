@@ -121,7 +121,7 @@ void game_loop(WINDOW * window, Table *table)
 
     refresh();
 
-    usleep(60000);
+    usleep(6000);
 
   }
 
@@ -184,8 +184,8 @@ Table* create_new_table(int height, int width)
 
   t->ball.x_pos = width/2;
   t->ball.y_pos = height/2;
-  t->ball.x_dir = 1;
-  t->ball.y_dir = 1;
+  t->ball.x_dir = 0.1;
+  t->ball.y_dir = 0.1;
 
   strncpy(t->players[0].name, "Player 1", MAX_NAME_LENGTH);
   strncpy(t->players[1].name, "Computer", MAX_NAME_LENGTH);
