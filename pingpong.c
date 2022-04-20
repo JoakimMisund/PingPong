@@ -221,18 +221,14 @@ void* safe_malloc(size_t size)
 
 void handle_potential_user_input(Table *table)
 {
-  int input = getch();
-
-  if( input == ERR )
-    return;
-
-  if( input == KEY_UP ) {
-    table->players[0].paddle.y_pos--;
-  } else if( input == KEY_DOWN) {
-    table->players[0].paddle.y_pos++;
-  }
-
-  while( getch() != ERR );
+	int input;
+	while((input = getch()) != ERR) {
+		if( input == KEY_UP ) {
+			table->players[0].paddle.y_pos--;
+		} else if( input == KEY_DOWN) {
+			table->players[0].paddle.y_pos++;
+		}
+	}
 }
 
 
@@ -243,9 +239,9 @@ void move_computer_paddle(Table *table)
   Paddle* p = &(table->players[1].paddle);
 
   if( p->y_pos+(p->height/2) < ball_y )
-    p->y_pos += 0.8;
+    p->y_pos += 1.2;
   else if( p->y_pos+(p->height/2) > ball_y)
-    p->y_pos -= 0.8;
+    p->y_pos -= 1.2;
 
 }
 
