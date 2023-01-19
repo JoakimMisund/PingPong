@@ -1,10 +1,9 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent { docker { image 'gcc:4.9' } }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
                 sh 'make'
             }
         }
