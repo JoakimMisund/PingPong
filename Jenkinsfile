@@ -10,10 +10,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
-                        sh 'echo "should be deployed"'
-                    }
+                 sh 'echo "should be deployed"'
                 }
             }
         }
