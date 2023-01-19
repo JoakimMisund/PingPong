@@ -7,18 +7,6 @@ pipeline {
                 sh 'make'
             }
         }
-        
-        stage('Deploy') {
-            steps {
-                 sh 'echo "should be deployed"'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'echo "Success!"; exit 0'
-            }
-        }
     }
     
     post {
