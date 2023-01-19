@@ -11,7 +11,6 @@ pipeline {
         stage('Deploy') {
             steps {
                  sh 'echo "should be deployed"'
-                }
             }
         }
         
